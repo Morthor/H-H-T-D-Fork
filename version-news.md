@@ -4,6 +4,12 @@ H.H.T.D.
 *Change log*
 ------------
 
+**version 2.4.27 (2026-04-21):**
+
+- TOC update for WoW Midnight (12.0.1, interface 120001)
+
+- Fix potential Lua error when using "Test on target" in Midnight: GetBattlefieldScore / GetNumBattlefieldScores / RequestBattlefieldScoreData were removed in 12.0 and are now gracefully skipped
+
 **version 2.4.26 (2025-12-31):**
 
 - Fix an error message in chat at startup on retail.

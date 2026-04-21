@@ -1030,7 +1030,7 @@ do
 
     local str_match                   = _G.string.match;
     local GetTime                     = _G.GetTime;
-    local RequestBattlefieldScoreData = _G.RequestBattlefieldScoreData;
+    local RequestBattlefieldScoreData = _G.RequestBattlefieldScoreData or (_G.C_PvP and _G.C_PvP.RequestBattlefieldScoreData);
 
     local pairs                     = _G.pairs;
     local ipairs                    = _G.ipairs;
@@ -1152,6 +1152,10 @@ do
     local GetBattlefieldScore = _G.GetBattlefieldScore
     local ApiChangedCounter = 0
     local function checkPlayerRealRole(PlayerName, spellName)
+        if not GetNumBattlefieldScores or not GetBattlefieldScore or not RequestBattlefieldScoreData then
+            return nil
+        end
+
         if GetNumBattlefieldScores() == 0 then
             return nil
         end
